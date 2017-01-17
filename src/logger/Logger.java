@@ -21,10 +21,10 @@ public class Logger {
     public static void main(String[] args) {
          
          Scanner lettore = new Scanner(System.in);
-        
+         
         try {
             
-            // apre il file in scrittura
+            
             FileWriter file = new FileWriter(data/log.txt);
             String str;
             do {

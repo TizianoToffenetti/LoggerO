@@ -28,7 +28,7 @@ public class Logger {
             FileWriter file = new FileWriter(data/log.txt);
             String str;
             do {
-                System.out.print("Scrivi una stringa (vuota per terminare): ");
+                System.out.print("Scrivi una stringa: ");
                 str = lettore.nextLine();
                 
                 for (int i = 0; i < str.length(); i++)

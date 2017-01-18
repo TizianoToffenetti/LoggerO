@@ -42,7 +42,7 @@ public class Logger {
         } catch (IOException exc) {
             System.out.println(exc);
         } 
-        System.out.println("\nBye bye!");
+        System.out.println("\nCiao!");
     }
     }
     

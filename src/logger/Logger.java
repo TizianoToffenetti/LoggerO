@@ -5,8 +5,13 @@
  */
 package logger;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 /**
@@ -21,28 +26,31 @@ public class Logger {
     public static void main(String[] args) {
          
          Scanner lettore = new Scanner(System.in);
-         
+         FileWriter out;
+         BufferedWriter buff_out;
+         DateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd hh/mm/ss");
+         String str;
         try {
             
             
-            FileWriter file = new FileWriter(data/log.txt);
-            String str;
+            out = new FileWriter("data/log.txt");
+            buff_out = new BufferedWriter(out);
             do {
-                System.out.print("Scrivi una stringa: ");
+                System.out.print("Scrivi una stringa (per interrompere il programma premere invio): ");
                 str = lettore.nextLine();
                 
                 for (int i = 0; i < str.length(); i++)
-                    file.write(str.charAt(i));
-                file.write('\n');
+                    out.write(str.charAt(i));
+                out.write('\n');
                 
             } while (str.length() > 0);
             
-            file.close();
+            out.close();
             
         } catch (IOException exc) {
             System.out.println(exc);
         } 
-        System.out.println("\nCiao!");
+        System.out.println("\nGrazie di aver usato il programma!");
     }
     }
     
